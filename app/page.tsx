@@ -4,7 +4,6 @@ import JobOpening from '@/components/JobOpening'
 import Benefits from '@/components/Benefits'
 import MediaSection from '@/components/MediaSection'
 import Pricing from '@/components/Pricing'
-import Testimonials from '@/components/Testimonials'
 import FAQ from '@/components/FAQ'
 import Access from '@/components/Access'
 import FinalCTA from '@/components/FinalCTA'
@@ -25,7 +24,6 @@ export default function Home() {
         <Benefits />
         <MediaSection />
         <Pricing />
-        <Testimonials />
         <FAQ />
         <Access />
         <FinalCTA />
