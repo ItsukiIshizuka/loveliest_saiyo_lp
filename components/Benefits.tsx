@@ -46,9 +46,9 @@ export default function Benefits() {
             <span className="whitespace-nowrap">４つの魅力</span>
           </h2>
           <p className="font-body text-muted-foreground text-base max-w-md mx-auto leading-relaxed">
-            <span className="whitespace-nowrap">ペットと過ごせる・自由に働ける・しっかり稼げる。</span>
+            ペットと過ごせる・自由に働ける・しっかり稼げる。
             <br className="hidden sm:block" />
-            <span className="whitespace-nowrap">あなたの「こうしたい」を叶える職場がここにあります。</span>
+            あなたの「こうしたい」を叶える職場がここにあります。
           </p>
         </div>
 

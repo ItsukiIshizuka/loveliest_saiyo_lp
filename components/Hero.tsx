@@ -47,9 +47,9 @@ export default function Hero() {
       {/* テキストコンテンツ */}
       <div className="relative z-10 flex flex-col justify-center w-full lg:w-1/2 px-6 sm:px-10 lg:px-14 xl:px-20 py-24 lg:py-32">
         {/* バッジ */}
-        <p className="hero-tag inline-flex items-center gap-2.5 font-body text-[11px] tracking-[0.2em] uppercase text-primary mb-7">
+        <p className="hero-tag flex items-center gap-2.5 font-body text-[11px] tracking-[0.2em] uppercase text-primary mb-7 max-w-full">
           <span className="block h-px w-6 bg-primary shrink-0" aria-hidden />
-          <span className="whitespace-nowrap">千葉・我孫子 — トータルビューティーサロン 求人</span>
+          <span className="truncate">千葉・我孫子 — トータルビューティーサロン 求人</span>
           <span className="block h-px w-6 bg-primary shrink-0" aria-hidden />
         </p>
 

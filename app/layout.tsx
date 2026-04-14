@@ -60,9 +60,9 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${notoSerifJP.variable} ${notoSansJP.variable} ${cormorantGaramond.variable} h-full antialiased`}
+      className={`${notoSerifJP.variable} ${notoSansJP.variable} ${cormorantGaramond.variable} h-full antialiased overflow-x-hidden`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col overflow-x-hidden">{children}</body>
     </html>
   );
 }
