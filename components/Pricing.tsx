@@ -3,113 +3,104 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import BookingButton from '@/components/BookingButton'
 
-const plans = [
+const employmentTypes = [
   {
-    name: '部分脱毛',
-    nameEn: 'Partial',
-    firstPrice: '4,900',
-    regularPrice: '6,400',
-    time: '約30分',
+    name: 'パート・アルバイト',
+    nameEn: 'Part Time',
+    mainLabel: '時給',
+    mainSalary: '1,250',
+    mainUnit: '円',
     badge: null,
-    features: ['わきや Vライン など部位ごと', '約30分で完了', '都度払い・回数券なし', '初回¥4,900でお試し可能'],
+    features: [
+      '勤務時間は自由に設定',
+      '社会保険完備',
+      '歩合制度あり',
+      '社食無料（豆乳パン・毎日）',
+    ],
   },
   {
-    name: '全身脱毛',
-    nameEn: 'Full Body',
-    firstPrice: '9,900',
-    regularPrice: '11,400',
-    time: '約1時間',
-    badge: 'おすすめ',
-    features: ['全身くまなくケア', '約1時間で完了', '都度払い・回数券なし', '初回¥9,900でお試し可能'],
+    name: '正社員',
+    nameEn: 'Full Time',
+    mainLabel: '月給',
+    mainSalary: '230,000',
+    mainUnit: '円',
+    badge: '募集中',
+    features: [
+      '完全フレックス制',
+      '社会保険完備',
+      '歩合制度あり',
+      '社食無料（豆乳パン・毎日）',
+    ],
   },
 ]
 
 export default function Pricing() {
   return (
-    <section className="py-24 sm:py-32 bg-background" aria-labelledby="pricing-title">
+    <section className="py-24 sm:py-32 bg-background" aria-labelledby="salary-title">
       <div className="mx-auto max-w-4xl px-5 sm:px-6">
         {/* ヘッダー */}
         <div className="text-center mb-16 reveal reveal-stagger-1">
           <p className="font-body text-[11px] tracking-[0.22em] uppercase text-primary mb-3">
-            Pricing
+            Salary &amp; Benefits
           </p>
           <h2
-            id="pricing-title"
+            id="salary-title"
             className="font-display text-3xl sm:text-4xl tracking-tight text-foreground mb-4"
           >
-            <span className="whitespace-nowrap">シンプルで</span>
-            <br className="sm:hidden" />
-            <span className="whitespace-nowrap">わかりやすい料金</span>
+            <span className="whitespace-nowrap">給与・</span>
+            <span className="whitespace-nowrap">福利厚生</span>
           </h2>
           <p className="font-body text-muted-foreground text-base max-w-md mx-auto leading-relaxed">
-            <span className="whitespace-nowrap">都度払いだから、続けやすい。</span>
+            <span className="whitespace-nowrap">頑張った分だけ正直に反映される仕組み。</span>
             <br />
-            <span className="whitespace-nowrap">回数券・コースの縛りは</span>
-            <span className="whitespace-nowrap">一切ありません。</span>
+            <span className="whitespace-nowrap">ベースもしっかり、歩合でさらに稼げます。</span>
           </p>
         </div>
 
-        {/* 料金カード */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 mb-10">
-          {plans.map((p, i) => (
-            <div
-              key={p.name}
-              className={`reveal reveal-stagger-${i + 1}`}
-            >
+        {/* 雇用形態カード */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 mb-8">
+          {employmentTypes.map((e, i) => (
+            <div key={e.name} className={`reveal reveal-stagger-${i + 1}`}>
               <Card
                 className={[
                   'h-full transition-all duration-300',
-                  p.badge
+                  e.badge
                     ? 'border-2 border-primary shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/15'
                     : 'border-primary/15 hover:border-primary/30 hover:shadow-lg',
                 ].join(' ')}
               >
                 <CardContent className="pt-7 pb-7 px-6 flex flex-col gap-5 h-full">
-                  {/* プランバッジ */}
-                  {p.badge && (
+                  {e.badge && (
                     <Badge className="w-fit bg-primary text-primary-foreground text-xs font-body">
-                      {p.badge}
+                      {e.badge}
                     </Badge>
                   )}
 
-                  {/* プラン名 */}
                   <div>
                     <p className="font-elegant text-sm tracking-widest text-muted-foreground italic mb-0.5">
-                      {p.nameEn}
+                      {e.nameEn}
                     </p>
                     <h3 className="font-display text-2xl font-medium text-foreground">
-                      {p.name}
+                      {e.name}
                     </h3>
                   </div>
 
-                  {/* 価格 */}
-                  <div className="bg-secondary/60 rounded-xl p-4 space-y-2">
+                  <div className="bg-secondary/60 rounded-xl p-4">
                     <div className="flex items-baseline gap-1.5">
-                      <span className="font-body text-xs text-muted-foreground w-20 shrink-0">
-                        初回
+                      <span className="font-body text-xs text-muted-foreground w-14 shrink-0">
+                        {e.mainLabel}
                       </span>
                       <span className="font-display text-3xl font-medium text-primary">
-                        ¥{p.firstPrice}
+                        ¥{e.mainSalary}
                       </span>
-                      <span className="font-body text-xs text-muted-foreground">（税込）</span>
+                      <span className="font-body text-sm text-muted-foreground">
+                        / {e.mainUnit}
+                      </span>
                     </div>
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="font-body text-xs text-muted-foreground w-20 shrink-0">
-                        2回目以降
-                      </span>
-                      <span className="font-display text-2xl font-medium text-foreground">
-                        ¥{p.regularPrice}
-                      </span>
-                      <span className="font-body text-xs text-muted-foreground">（税込）</span>
-                    </div>
-                    <p className="font-body text-xs text-muted-foreground pt-1">
-                      施術時間：{p.time}
-                    </p>
                   </div>
 
-                  {/* 特徴リスト */}
                   <ul className="space-y-2.5 flex-1">
-                    {p.features.map((f) => (
+                    {e.features.map((f) => (
                       <li key={f} className="flex items-start gap-2 font-body text-sm text-foreground">
                         <Check className="size-4 text-primary shrink-0 mt-0.5" aria-hidden />
                         {f}
@@ -122,19 +113,39 @@ export default function Pricing() {
           ))}
         </div>
 
+        {/* 歩合制度ハイライト */}
+        <div className="reveal reveal-stagger-3 rounded-2xl border border-primary/20 bg-gradient-to-br from-[var(--blush)] to-[var(--pearl)] p-6 sm:p-8 mb-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="inline-flex items-center justify-center size-12 rounded-xl bg-primary/10 shrink-0">
+              <svg viewBox="0 0 24 24" className="size-6 stroke-primary fill-none stroke-2" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+              </svg>
+            </div>
+            <div>
+              <p className="font-body text-[11px] tracking-[0.2em] uppercase text-primary mb-1">
+                歩合制度
+              </p>
+              <h3 className="font-display text-xl font-medium text-foreground mb-1">
+                売上 60万円以上 → <span className="text-primary">40% 還元</span>
+              </h3>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                頑張った分だけしっかりお給料に反映される仕組みです。
+                リピーター中心の高単価サロンだから、安定した歩合が見込めます。
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* 注意書き + CTA */}
-        <div className="reveal reveal-stagger-3 text-center space-y-6">
+        <div className="reveal reveal-stagger-4 text-center space-y-6">
           <p className="font-body text-xs text-muted-foreground">
-            ※ 表示価格はすべて税込です。施術部位・毛量によって時間が前後する場合があります。
+            ※ 募集職種はアイリスト（美容師免許必須）です。詳細はお問い合わせください。
           </p>
           <BookingButton className="btn-cta inline-flex items-center justify-center gap-2.5 bg-white/70 backdrop-blur-sm border border-primary/30 text-primary font-body font-semibold text-sm px-8 py-4 rounded-full shadow-md shadow-primary/10 whitespace-nowrap">
             <svg viewBox="0 0 24 24" className="size-5 shrink-0 stroke-primary fill-none stroke-2" aria-hidden>
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" strokeLinecap="round" strokeLinejoin="round" />
-              <line x1="16" y1="2" x2="16" y2="6" strokeLinecap="round" />
-              <line x1="8" y1="2" x2="8" y2="6" strokeLinecap="round" />
-              <line x1="3" y1="10" x2="21" y2="10" strokeLinecap="round" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
             </svg>
-            ホットペッパーで予約する
+            応募・見学申込はこちら
           </BookingButton>
         </div>
       </div>

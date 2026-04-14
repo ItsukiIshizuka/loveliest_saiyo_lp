@@ -2,28 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
-
-const PARTIAL_URL = 'https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000481060&menuId=MN00000011004507&add=5'
-const FULLBODY_URL = 'https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000481060&menuId=MN00000010703068&add=5'
-
-const menus = [
-  {
-    label: '部分脱毛',
-    labelEn: 'Partial',
-    firstPrice: '¥4,900',
-    regularPrice: '¥6,400',
-    time: '約30分',
-    url: PARTIAL_URL,
-  },
-  {
-    label: '全身脱毛',
-    labelEn: 'Full Body',
-    firstPrice: '¥9,900',
-    regularPrice: '¥11,400',
-    time: '約1時間',
-    url: FULLBODY_URL,
-  },
-] as const
+import { Phone } from 'lucide-react'
 
 export default function BookingButton({
   className,
@@ -63,7 +42,7 @@ export default function BookingButton({
           onClick={close}
           role="dialog"
           aria-modal="true"
-          aria-label="ご予約メニューの選択"
+          aria-label="お問い合わせ・応募方法"
         >
           <div
             className="bg-background rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden"
@@ -73,10 +52,10 @@ export default function BookingButton({
             <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-border/40">
               <div>
                 <p className="font-body text-[10px] tracking-[0.2em] uppercase text-primary mb-0.5">
-                  Reservation
+                  Contact / Apply
                 </p>
                 <h2 className="font-display text-lg text-foreground">
-                  メニューを選択
+                  お問い合わせ・応募
                 </h2>
               </div>
               <button
@@ -90,45 +69,50 @@ export default function BookingButton({
               </button>
             </div>
 
-            {/* メニュー選択肢 */}
+            {/* 連絡方法 */}
             <div className="p-4 space-y-3">
-              {menus.map((menu) => (
-                <a
-                  key={menu.label}
-                  href={menu.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={close}
-                  className="flex items-center justify-between w-full rounded-xl border border-primary/20 bg-secondary/40 hover:bg-secondary hover:border-primary/40 px-5 py-4 transition-all duration-200 group"
-                  aria-label={`${menu.label}をホットペッパーで予約する（新しいタブで開きます）`}
-                >
-                  <div>
-                    <p className="font-elegant text-xs tracking-widest text-muted-foreground italic mb-0.5">
-                      {menu.labelEn}
-                    </p>
-                    <p className="font-display text-base text-foreground mb-2">
-                      {menu.label}
-                    </p>
-                    <div className="space-y-0.5">
-                      <p className="font-body text-xs text-muted-foreground">
-                        初回 <span className="text-primary font-medium">{menu.firstPrice}</span>
-                        <span className="text-muted-foreground/60 ml-1">（税込）</span>
-                      </p>
-                      <p className="font-body text-xs text-muted-foreground">
-                        定価 <span className="font-medium">{menu.regularPrice}</span>
-                        <span className="text-muted-foreground/60 ml-1">/ {menu.time}</span>
-                      </p>
-                    </div>
-                  </div>
-                  <svg viewBox="0 0 24 24" className="size-4 stroke-primary fill-none stroke-2 shrink-0 ml-3 group-hover:translate-x-0.5 transition-transform" aria-hidden>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6" />
-                  </svg>
-                </a>
-              ))}
+              {/* お電話 */}
+              <a
+                href="tel:08025628508"
+                onClick={close}
+                className="flex items-center justify-between w-full rounded-xl border border-primary/20 bg-secondary/40 hover:bg-secondary hover:border-primary/40 px-5 py-4 transition-all duration-200 group"
+                aria-label="電話でお問い合わせ: 080-2562-8508"
+              >
+                <div>
+                  <p className="font-body text-xs text-muted-foreground mb-0.5">
+                    電話でお問い合わせ・応募
+                  </p>
+                  <p className="font-display text-base text-foreground">
+                    080-2562-8508
+                  </p>
+                  <p className="font-body text-xs text-muted-foreground mt-1">
+                    サロン見学のご相談も歓迎
+                  </p>
+                </div>
+                <Phone className="size-5 text-primary shrink-0 ml-3" aria-hidden />
+              </a>
+
+              {/* LINE（準備中） */}
+              <div className="flex items-center justify-between w-full rounded-xl border border-border/40 bg-secondary/20 px-5 py-4 opacity-60">
+                <div>
+                  <p className="font-body text-xs text-muted-foreground mb-0.5">
+                    LINE で応募・見学申込
+                  </p>
+                  <p className="font-display text-base text-foreground">
+                    準備中
+                  </p>
+                  <p className="font-body text-xs text-muted-foreground mt-1">
+                    しばらくお待ちください
+                  </p>
+                </div>
+                <svg viewBox="0 0 24 24" className="size-5 fill-current text-muted-foreground shrink-0 ml-3" aria-hidden>
+                  <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                </svg>
+              </div>
             </div>
 
             <p className="font-body text-xs text-muted-foreground text-center pb-5 px-6">
-              ホットペッパービューティーの予約画面へ移動します
+              まずはお気軽にご連絡ください。サロン見学も大歓迎です。
             </p>
           </div>
         </div>,

@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { useState, useEffect, useCallback } from 'react'
 
 const INSTAGRAM_URL = 'https://www.instagram.com/led_datsumo_loveliest_abiko'
@@ -9,22 +8,18 @@ const galleryItems = [
   {
     label: 'サロン内部',
     sub: 'プライベート個室',
-    src: '/images/in_store.jpg',
   },
   {
-    label: 'LED脱毛機',
-    sub: '最新機器使用',
-    src: '/images/datsumo_machine.jpg',
+    label: '施術スペース',
+    sub: '清潔感のある環境',
   },
   {
-    label: 'Before / After',
-    sub: '施術効果イメージ',
-    src: '/images/before_after.jpg',
+    label: 'ペット待機スペース',
+    sub: '専用エリア完備',
   },
   {
-    label: 'カウンセリング',
-    sub: '丁寧な事前説明',
-    src: '/images/counseling.png',
+    label: 'ラウンジ・休憩エリア',
+    sub: 'リラックスできる空間',
   },
 ] as const
 
@@ -66,11 +61,11 @@ export default function MediaSection() {
           </h2>
           <p className="font-body text-muted-foreground text-base max-w-sm mx-auto leading-relaxed">
             <span className="whitespace-nowrap">清潔感のある完全個室で、</span>
-            <span className="whitespace-nowrap">リラックスして施術を受けられます。</span>
+            <span className="whitespace-nowrap">落ち着いて働ける環境を整えています。</span>
           </p>
         </div>
 
-        {/* 画像グリッド */}
+        {/* 画像グリッド（プレースホルダー） */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-10">
           {galleryItems.map((item, i) => (
             <div
@@ -78,20 +73,29 @@ export default function MediaSection() {
               className={`reveal reveal-stagger-${i + 1}`}
             >
               <div
-                className="relative rounded-2xl overflow-hidden aspect-square sm:aspect-[3/4] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-zoom-in"
+                className="relative rounded-2xl overflow-hidden aspect-square sm:aspect-[3/4] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
                 onClick={() => setSelected(item)}
                 role="button"
                 aria-label={`${item.label}を拡大表示`}
                 tabIndex={0}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setSelected(item) }}
               >
-                <Image
-                  src={item.src}
-                  alt={item.label}
-                  fill
-                  sizes="(max-width: 640px) 50vw, 25vw"
-                  className="object-cover"
-                />
+                {/* プレースホルダー */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--pearl)] to-[var(--blush)] flex flex-col items-center justify-center gap-2 p-3">
+                  <svg viewBox="0 0 24 24" className="size-8 stroke-current fill-none stroke-1 text-primary/30" aria-hidden>
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <path d="m21 15-5-5L5 21" />
+                  </svg>
+                  <p className="font-body text-[10px] text-center text-muted-foreground leading-tight">
+                    {item.label}
+                  </p>
+                </div>
+                {/* ラベルオーバーレイ */}
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/25 to-transparent px-3 py-2.5">
+                  <p className="font-body text-[10px] text-white/70">{item.sub}</p>
+                  <p className="font-display text-xs text-white">{item.label}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -100,8 +104,8 @@ export default function MediaSection() {
         {/* Instagram誘導 */}
         <div className="reveal reveal-stagger-1 text-center">
           <p className="font-body text-sm text-muted-foreground mb-4">
-            <span className="whitespace-nowrap">施術のビフォーアフターや</span>
-            <span className="whitespace-nowrap">最新情報はInstagramで発信中</span>
+            <span className="whitespace-nowrap">サロンの最新情報は</span>
+            <span className="whitespace-nowrap">Instagramで発信中</span>
           </p>
           <a
             href={INSTAGRAM_URL}
@@ -118,7 +122,7 @@ export default function MediaSection() {
         </div>
       </div>
 
-      {/* ライトボックスモーダル */}
+      {/* ライトボックスモーダル（プレースホルダー） */}
       {selected && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
@@ -127,7 +131,6 @@ export default function MediaSection() {
           aria-modal="true"
           aria-label={selected.label}
         >
-          {/* 閉じるボタン */}
           <button
             className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
             onClick={close}
@@ -138,19 +141,19 @@ export default function MediaSection() {
             </svg>
           </button>
 
-          {/* 画像コンテナ（クリック伝播を止める） */}
           <div
-            className="relative max-w-3xl w-full max-h-[85dvh] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative max-w-xl w-full rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[var(--pearl)] to-[var(--blush)]"
+            style={{ aspectRatio: '4/3' }}
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              src={selected.src}
-              alt={selected.label}
-              width={1200}
-              height={900}
-              className="object-contain w-full h-full max-h-[85dvh]"
-              priority
-            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+              <svg viewBox="0 0 24 24" className="size-16 stroke-current fill-none stroke-1 text-primary/20" aria-hidden>
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <path d="m21 15-5-5L5 21" />
+              </svg>
+              <p className="font-body text-sm text-muted-foreground">画像準備中</p>
+            </div>
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/50 to-transparent px-5 py-4">
               <p className="font-body text-xs text-white/70 mb-0.5">{selected.sub}</p>
               <p className="font-display text-sm text-white">{selected.label}</p>

@@ -1,29 +1,29 @@
-import { Zap, Clock, Wallet, Home } from 'lucide-react'
+import { Clock, Wallet, GraduationCap, Heart } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 
 const benefits = [
   {
-    icon: Zap,
-    title: '医療に近い効果のLED脱毛',
-    body: '最新のLED脱毛機を使用。高い効果を保ちながらも肌への刺激を最小限に抑えます。デリケートな肌質の方や、医療脱毛の痛みが心配な方にも安心です。',
+    icon: Heart,
+    title: 'ペット同伴出勤OK',
+    body: '専用の待機スペースを完備。勤務中も愛犬と一緒に過ごせます。災害時もすぐ対応できる安心感も。面接時にペット同伴必須（相性確認のため）。※猫ちゃんはアレルギーのため不可。',
     stagger: 'reveal-stagger-1',
   },
   {
     icon: Clock,
-    title: '全身 約1時間のスピード施術',
-    body: '全身脱毛でも約1時間、部分脱毛は約30分で完了。忙しいお仕事・育児の合間でも無理なく通えます。タイパを重視する方に選ばれています。',
+    title: '完全フレックス制で自由な働き方',
+    body: '営業時間（8:30〜20:30）の中で、出退勤は自由。予約も自分で調整OK。育児・プライベートと両立しやすい、ライフスタイルに合わせた働き方が実現できます。',
     stagger: 'reveal-stagger-2',
   },
   {
     icon: Wallet,
-    title: '都度払いで安心・縛りなし',
-    body: '回数券・コースの縛りは一切なし。全身脱毛は初回¥9,900から。まずお試しで来てみて、納得できたら続けられる、無理のない価格体系です。',
+    title: '頑張った分だけ稼げる歩合制度',
+    body: '売上60万円以上で40%還元。正社員は月給230,000円、パートは時給1,250円とベースもしっかり。リピーター中心の高単価サロンだから、安定した収入が見込めます。',
     stagger: 'reveal-stagger-3',
   },
   {
-    icon: Home,
-    title: '完全個室・子連れ相談可',
-    body: '周りの目を気にせずリラックスできる完全個室のプライベートサロン。小さなお子さま連れの方もお気軽にご相談ください。',
+    icon: GraduationCap,
+    title: '未経験・ブランクOKの充実サポート',
+    body: '1〜3ヶ月のカリキュラムを完備。営業時間内に練習できるので自宅練習の負担なし。新卒・ブランクOK。技術をしっかり身につけてからデビューできます。',
     stagger: 'reveal-stagger-4',
   },
 ]
@@ -41,15 +41,14 @@ export default function Benefits() {
             id="benefits-title"
             className="font-display text-3xl sm:text-4xl tracking-tight text-foreground mb-4"
           >
-            <span className="whitespace-nowrap">Loveliestが選ばれる</span>
+            <span className="whitespace-nowrap">Loveliestで働く</span>
             <br className="sm:hidden" />
-            <span className="whitespace-nowrap">４つの理由</span>
+            <span className="whitespace-nowrap">４つの魅力</span>
           </h2>
           <p className="font-body text-muted-foreground text-base max-w-md mx-auto leading-relaxed">
-            <span className="whitespace-nowrap">「高い・痛い・時間がかかる」</span>
-            <span className="whitespace-nowrap">という脱毛のお悩みに、</span>
+            <span className="whitespace-nowrap">ペットと過ごせる・自由に働ける・しっかり稼げる。</span>
             <br className="hidden sm:block" />
-            <span className="whitespace-nowrap">Loveliestがお答えします。</span>
+            <span className="whitespace-nowrap">あなたの「こうしたい」を叶える職場がここにあります。</span>
           </p>
         </div>
 

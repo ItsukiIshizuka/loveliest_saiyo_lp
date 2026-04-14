@@ -27,23 +27,26 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "LED脱毛 千葉・我孫子 | Loveliest（ラブリエスト）",
+  title: "アイリスト求人 千葉・我孫子 | Loveliest（ラヴリエスト）",
   description:
-    "千葉県我孫子市のトータルビューティーサロン Loveliest（ラブリエスト）。痛みが少なく肌にやさしいLED脱毛を都度払いでご利用いただけます。無料カウンセリング実施中。LINEから24時間ご予約可能。",
+    "千葉県我孫子市のトータルビューティーサロン Loveliest（ラヴリエスト）のアイリスト求人。愛犬と一緒に出勤OK・完全フレックス制・歩合制度あり。未経験・新卒・ブランク歓迎。サロン見学随時受付中。",
   keywords: [
-    "LED脱毛",
+    "アイリスト",
+    "求人",
     "我孫子",
     "千葉",
-    "脱毛",
-    "都度払い",
-    "痛みが少ない",
+    "ペット同伴",
+    "フレックス",
+    "美容師",
+    "まつげエクステ",
     "トータルビューティー",
     "サロン",
+    "未経験",
   ],
   openGraph: {
-    title: "LED脱毛 千葉・我孫子 | Loveliest",
+    title: "アイリスト求人 千葉・我孫子 | Loveliest",
     description:
-      "痛みが少なく肌にやさしいLED脱毛。都度払いで気軽にはじめられます。",
+      "愛犬と一緒に働けるサロン。完全フレックス制・歩合あり・未経験OK。",
     locale: "ja_JP",
     type: "website",
   },

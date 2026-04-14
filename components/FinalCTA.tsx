@@ -25,7 +25,7 @@ export default function FinalCTA() {
 
       <div className="relative mx-auto max-w-2xl px-5 sm:px-6 text-center">
         <p className="reveal reveal-stagger-1 font-body text-[11px] tracking-[0.22em] uppercase text-white/70 mb-5">
-          ご予約はこちら
+          ご応募・見学受付中
         </p>
 
         <h2
@@ -34,33 +34,30 @@ export default function FinalCTA() {
         >
           <span className="whitespace-nowrap">まずは、</span>
           <br className="sm:hidden" />
-          <span className="whitespace-nowrap">無料カウンセリングへ。</span>
+          <span className="whitespace-nowrap">サロン見学へ。</span>
         </h2>
 
         <p className="reveal reveal-stagger-3 font-body text-base text-white/80 leading-relaxed mb-10 max-w-md mx-auto">
           <span className="whitespace-nowrap">「合うかどうか不安…」という方も大歓迎。</span>
           <br />
-          <span className="whitespace-nowrap">カウンセリングだけでも、</span>
+          <span className="whitespace-nowrap">見学だけでも、</span>
           <span className="whitespace-nowrap">お気軽にどうぞ。</span>
           <br />
-          <span className="whitespace-nowrap">ホットペッパーから</span>
-          <span className="whitespace-nowrap">24時間いつでも予約できます。</span>
+          <span className="whitespace-nowrap">お電話またはLINEで</span>
+          <span className="whitespace-nowrap">お問い合わせください。</span>
         </p>
 
         <div className="reveal reveal-stagger-4 flex flex-col sm:flex-row items-center justify-center gap-4">
           <BookingButton className="btn-cta btn-cta-hero inline-flex items-center justify-center gap-2.5 bg-white/70 backdrop-blur-sm border border-primary/30 text-primary font-body font-semibold text-sm sm:text-lg px-10 py-5 rounded-full w-full sm:w-auto shadow-md shadow-primary/10 whitespace-nowrap">
             <svg viewBox="0 0 24 24" className="size-6 shrink-0 stroke-primary fill-none stroke-2" aria-hidden>
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" strokeLinecap="round" strokeLinejoin="round" />
-              <line x1="16" y1="2" x2="16" y2="6" strokeLinecap="round" />
-              <line x1="8" y1="2" x2="8" y2="6" strokeLinecap="round" />
-              <line x1="3" y1="10" x2="21" y2="10" strokeLinecap="round" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
             </svg>
-            ネット予約（ホットペッパー）
+            応募・見学申込はこちら
           </BookingButton>
           <a
             href="tel:08025628508"
             className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-body text-sm"
-            aria-label="電話で問い合わせ: 080-2562-8508"
+            aria-label="電話でお問い合わせ: 080-2562-8508"
           >
             <Phone className="size-4" aria-hidden />
             080-2562-8508

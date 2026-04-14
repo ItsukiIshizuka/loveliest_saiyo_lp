@@ -17,15 +17,15 @@ export default function Footer() {
                 Loveliest
               </p>
               <p className="font-body text-[10px] tracking-[0.2em] text-background/50 uppercase">
-                LED 脱毛 / 我孫子
+                Total Beauty / 求人
               </p>
             </div>
             <p className="font-body text-sm text-background/60 leading-[1.85]">
               千葉県我孫子市のトータルビューティーサロン。
               <br />
-              医療に近い効果のLED脱毛を、
+              ペット同伴・フレックス・歩合制度で、
               <br />
-              都度払いでご提供しています。
+              自由にしっかり働ける環境を提供しています。
             </p>
             <a
               href={INSTAGRAM_URL}
@@ -93,29 +93,26 @@ export default function Footer() {
                 <span>
                   JR我孫子駅 徒歩15分
                   <br />
-                  ※ 詳細はホットペッパーにてご確認ください
+                  営業時間：8:30〜20:30
                 </span>
               </li>
             </ul>
           </div>
 
-          {/* ご予約 */}
+          {/* 応募・お問い合わせ */}
           <div>
             <h3 className="font-display text-sm font-medium text-background/80 mb-5 tracking-wide">
-              ご予約・お問い合わせ
+              応募・お問い合わせ
             </h3>
             <div className="space-y-3">
               <BookingButton className="btn-cta flex items-center justify-center gap-2 bg-white/70 backdrop-blur-sm border border-primary/30 text-primary font-body font-medium text-sm px-5 py-3 rounded-full shadow-sm shadow-primary/10 whitespace-nowrap">
                 <svg viewBox="0 0 24 24" className="size-4 shrink-0 stroke-primary fill-none stroke-2" aria-hidden>
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <line x1="16" y1="2" x2="16" y2="6" strokeLinecap="round" />
-                  <line x1="8" y1="2" x2="8" y2="6" strokeLinecap="round" />
-                  <line x1="3" y1="10" x2="21" y2="10" strokeLinecap="round" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                 </svg>
-                ホットペッパーで予約する
+                応募・見学申込はこちら
               </BookingButton>
               <p className="font-body text-xs text-background/40 text-center">
-                24時間ネット予約受付中
+                サロン見学も随時受付中
               </p>
             </div>
           </div>

@@ -30,16 +30,16 @@ export default function Header() {
             Loveliest
           </span>
           <span className="font-body text-[9px] tracking-[0.22em] text-muted-foreground uppercase mt-0.5">
-            LED 脱毛 / 我孫子
+            Total Beauty / 求人
           </span>
         </div>
 
-        {/* Right: access + tel + 予約 */}
+        {/* Right: access + tel + 応募 */}
         <nav className="flex items-center gap-3">
           <a
             href="tel:08025628508"
             className="hidden sm:flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors font-body"
-            aria-label="電話で問い合わせ: 080-2562-8508"
+            aria-label="電話でお問い合わせ: 080-2562-8508"
           >
             <Phone className="size-3.5 shrink-0" aria-hidden />
             <span>080-2562-8508</span>
@@ -54,12 +54,9 @@ export default function Header() {
           </a>
           <BookingButton className="btn-cta inline-flex items-center gap-1 sm:gap-1.5 bg-white/70 backdrop-blur-sm border border-primary/30 text-primary text-xs sm:text-sm font-body font-semibold px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm shadow-primary/10 whitespace-nowrap">
             <svg viewBox="0 0 24 24" className="size-3.5 sm:size-4 shrink-0 stroke-primary fill-none stroke-2" aria-hidden>
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" strokeLinecap="round" strokeLinejoin="round" />
-              <line x1="16" y1="2" x2="16" y2="6" strokeLinecap="round" />
-              <line x1="8" y1="2" x2="8" y2="6" strokeLinecap="round" />
-              <line x1="3" y1="10" x2="21" y2="10" strokeLinecap="round" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
             </svg>
-            <span>ネット予約</span>
+            <span>応募する</span>
           </BookingButton>
         </nav>
       </div>

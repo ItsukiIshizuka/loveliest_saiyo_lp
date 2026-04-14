@@ -3,28 +3,28 @@ import { Card, CardContent } from '@/components/ui/card'
 
 const reviews = [
   {
-    initials: 'M.K',
-    name: 'M.K さん',
+    initials: 'S.M',
+    name: 'スタッフ S.M（アイリスト歴3年）',
     stars: 5,
-    body: '以前からマツエクでお世話になっていて脱毛を始めたということで行ってきました！最新の機械でとても丁寧だし安心して施術できました！効果が楽しみ！最後になんと朝食を出してくれてカフェのような居心地のいいお店です！オーナーのけいこさんの人柄が好きで通っています！スタッフさんも素敵でアットホームなまた行きたくなるサロンです！',
+    body: '愛犬を連れて出勤できるのが何より嬉しいです。離れている時間がストレスだったので、毎日一緒に過ごせるようになって働くのが楽しくなりました。フレックスなので自分のペースで予約を組めて、無理なく続けられています。',
   },
   {
-    initials: 'K.O',
-    name: 'K.O さん',
+    initials: 'Y.K',
+    name: 'スタッフ Y.K（育児中・パート）',
     stars: 5,
-    body: 'LED脱毛とゆうのはやったことが無かったのでお願いすることにしてみました。全然痛くなかったです！先端がすごく冷たくなっているので、デリケートゾーンは少し長めに冷やしてから照射してくれたり、とても丁寧に施術してくれました。まだ3回程度ですが、一番わかりやすいＶラインの毛質がだいぶ変わってる！お店の方達もとても親切で、とてもサービスの良い最強コスパのお店だと思います。',
+    body: '子育てと両立できる職場を探していて、こちらに出会いました。完全フレックスなので保育園の送迎に合わせて出退勤できます。オーナーがとても理解のある方で、無理なく長く続けられています。',
   },
   {
-    initials: 'A.K',
-    name: 'A.K さん',
+    initials: 'A.T',
+    name: 'スタッフ A.T（未経験から入社）',
     stars: 5,
-    body: 'とても居心地が良く、最高の脱毛サロンです！全身脱毛を初めてやって、3回ほどで薄くなってきました。効果もあるし、店員さん方の気遣いも完璧です！気軽に美容のことも聞けます！終わった後の飲み物とホームベーカリーもとても美味しいです！脱毛するならここ通うのがオススメ！',
+    body: '未経験で入社しましたが、カリキュラムがしっかりしていて安心してデビューできました。練習も営業時間内にできるので、自宅練習の負担がなかったのも助かりました。歩合もあってやりがいを感じています。',
   },
   {
-    initials: 'M.O',
-    name: 'M.O さん',
+    initials: 'M.H',
+    name: 'スタッフ M.H（ブランクありで復帰）',
     stars: 5,
-    body: '以前医療脱毛を受けた時は痛くて通うのが嫌になってしまいましたが、こちらの脱毛はびっくりするくらい痛みがなくて、なのに１回受けただけで毛が細く＆薄くなりました！うつ伏せになっているときも、iPadで動画が見られます！',
+    body: 'ブランクがあって不安でしたが、丁寧にサポートしてもらえました。リピーター様中心のサロンなので落ち着いた環境で施術でき、人間関係のストレスもほとんどありません。長く続けられそうです。',
   },
 ]
 
@@ -39,13 +39,13 @@ export default function Testimonials() {
         {/* ヘッダー */}
         <div className="text-center mb-16 reveal reveal-stagger-1">
           <p className="font-body text-[11px] tracking-[0.22em] uppercase text-primary mb-3">
-            Reviews
+            Staff Voice
           </p>
           <h2
             id="testimonials-title"
             className="font-display text-3xl sm:text-4xl tracking-tight text-foreground mb-4"
           >
-            お客様の声
+            スタッフの声
           </h2>
           <div className="flex items-center justify-center gap-2 font-body text-sm text-muted-foreground">
             <span className="text-[var(--gold-accent)] text-base" aria-label="星5">
@@ -69,7 +69,7 @@ export default function Testimonials() {
                     className="font-elegant text-5xl text-primary/20 leading-none select-none"
                     aria-hidden
                   >
-                    "
+                    &ldquo;
                   </span>
 
                   {/* 星評価 */}
