@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
+import JobOpening from '@/components/JobOpening'
 import Benefits from '@/components/Benefits'
 import MediaSection from '@/components/MediaSection'
 import Pricing from '@/components/Pricing'
@@ -20,6 +21,7 @@ export default function Home() {
 
       <main id="main-content">
         <Hero />
+        <JobOpening />
         <Benefits />
         <MediaSection />
         <Pricing />
