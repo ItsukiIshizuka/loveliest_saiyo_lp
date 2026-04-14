@@ -21,7 +21,7 @@ export default function JobOpening() {
           {/* 左: 募集メイン */}
           <div className="flex-1">
             {/* NOW HIRING バッジ */}
-            <div className="reveal reveal-stagger-1 inline-flex items-center gap-2.5 mb-7">
+            <div className="reveal reveal-stagger-1 inline-flex items-center gap-2.5 mb-3">
               <span className="relative flex size-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60" />
                 <span className="relative inline-flex rounded-full size-2.5 bg-primary" />
@@ -30,6 +30,9 @@ export default function JobOpening() {
                 Now Hiring
               </span>
             </div>
+            <p className="reveal reveal-stagger-1 font-body text-sm text-muted-foreground mb-5">
+              今回募集している職種はこちらです
+            </p>
 
             {/* 見出し */}
             <h2
