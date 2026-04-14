@@ -108,16 +108,6 @@ export default function Hero() {
 
         {/* 社会的証明 */}
         <div className="hero-social mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-body text-muted-foreground">
-          <div className="flex items-center gap-1.5">
-            <span
-              className="flex gap-0.5 text-[var(--gold-accent)]"
-              aria-label="Google口コミ星5"
-            >
-              ★★★★★
-            </span>
-            <span>Google口コミ 5.0</span>
-          </div>
-          <span className="hidden sm:block w-px h-4 bg-border" aria-hidden />
           <span>📍 JR我孫子駅 徒歩15分</span>
           <span className="hidden sm:block w-px h-4 bg-border" aria-hidden />
           <span>🐶 ペット同伴出勤OK</span>
